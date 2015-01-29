@@ -6,6 +6,6 @@ RUN cd /root/backup; bundle install
 WORKDIR /root/backup
 
 # Volumes
-VOLUME ["/root/backup/.data", "/root/backup/log", "/root/backup/models"]
+VOLUME ["/data", "/root/backup/log", "/root/backup/models"]
 
-CMD ["bash"]
+CMD ["backup", "perform", "--trigger", "default"]
