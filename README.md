@@ -1,16 +1,15 @@
-# Environment Vairables
+# Docker Backup
 
-BACKUP_NAME=backup
-S3_ACCESS_KEY_ID=id
-S3_SECRET_ACCESS_KEY=key
-S3_REGION=ap-southeast-1
-S3_BUCKET=bucket-name
-S3_BUCKET_PATH=/
-S3_KEEP=5
-S3_TRUNKSIZE=10
+Based on Backup gems in Ruby, customize backup solution to docker.
 
-# Volume
+## How to Use
 
-"/data"
-"/root/backup/log"
-"/root/backup/models"
+1. Create a new Dockerfile based on backup
+2. Add volume where you want to backup
+3. Add your models with backup logic to /root/backup/models/
+4. Override /root/backup/crontab
+5. Have fun!
+
+## Volume
+
+"/root/backup/logs"
