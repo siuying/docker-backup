@@ -13,7 +13,7 @@ COPY ./crontab /etc/crontab
 RUN touch /var/log/cron.log
 
 # Volumes
-VOLUME ["/root/backup/logs"]
+VOLUME ["/root/backup/logs", "/etc/crontab", "/root/backup/models/default.rb"]
 
 # Run the cronjob
 CMD rsyslogd && cron && tail -f /var/log/syslog /var/log/cron.log
