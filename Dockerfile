@@ -1,10 +1,5 @@
 FROM ruby:2.2.0-wheezy
 
-# Copy App
-COPY . /root/backup
-RUN cd /root/backup; bundle install
-WORKDIR /root/backup
-
 # setup crontab
 RUN apt-get update && \
     apt-get install -y cron rsyslog && \
@@ -12,8 +7,13 @@ RUN apt-get update && \
 COPY ./crontab /etc/crontab
 RUN touch /var/log/cron.log
 
+# Copy App
+COPY . /root/Backup
+RUN cd /root/Backup; bundle install
+WORKDIR /root/Backup
+
 # Volumes
-VOLUME ["/root/backup/logs", "/etc/crontab", "/root/backup/models/default.rb"]
+VOLUME ["/root/Backup/logs"]
 
 # Run the cronjob
 CMD rsyslogd && cron && tail -f /var/log/syslog /var/log/cron.log
