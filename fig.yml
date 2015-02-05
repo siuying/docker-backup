@@ -1,0 +1,8 @@
+backup:
+  image: siuying/backup:1.0.0
+  volumes:
+   - /data/to/backups:/data
+   - ./models/default.rb:/root/Backup/models/default.rb
+   - ./crontab:/etc/crontab
+   - /root/.ssh/id_rsa:/root/.ssh/backup_rsa
+   - /root/.ssh/known_hosts:/root/.ssh/known_hosts
