@@ -1,6 +1,6 @@
 # Docker Backup
 
-Based on Backup gems in Ruby, customize backup solution to docker.
+Use [Backup](https://github.com/meskyanichi/backup) gem to backup docker volume.
 
 ## How to Use
 
