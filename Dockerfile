@@ -2,7 +2,7 @@ FROM ruby:2.2.0-wheezy
 
 # setup crontab
 RUN apt-get update && \
-    apt-get install -y cron rsyslog && \
+    apt-get install -y cron rsyslog rsync && \
     rm -rf /var/lib/apt/lists/*
 COPY ./crontab /etc/crontab
 RUN touch /var/log/cron.log
