@@ -1,2 +1,2 @@
 # Example: Run 'default' Every 04:30am
-# 30 4 * * * /bin/bash -l -c 'backup perform -t default'
+# 30 4 * * * root /bin/bash -l -c 'backup perform -t default'
