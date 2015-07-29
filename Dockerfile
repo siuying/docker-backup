@@ -1,4 +1,4 @@
-FROM ruby:2.2.0-wheezy
+FROM ruby:2.2.2
 
 # setup crontab
 RUN apt-get update && \

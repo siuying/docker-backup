@@ -1,5 +1,5 @@
 backup:
-  image: siuying/backup:1.0.0
+  image: siuying/backup:4.1.11
   volumes:
    - /data/to/backups:/data
    - ./models/default.rb:/root/Backup/models/default.rb
