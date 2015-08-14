@@ -2,7 +2,7 @@ FROM hypriot/rpi-ruby:2.2.2
 
 # setup crontab
 RUN apt-get update && \
-    apt-get install -y cron rsyslog rsync && \
+    apt-get install -y cron rsyslog rsync build-essential && \
     rm -rf /var/lib/apt/lists/*
 COPY ./crontab /etc/crontab
 RUN touch /var/log/cron.log
